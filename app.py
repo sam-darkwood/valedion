@@ -6,10 +6,13 @@ import streamlit as st
 from groq import Groq
 from docxtpl import DocxTemplate
 import datetime 
-import os 
+import os
+from dotenv import load_dotenv 
 import io
 
-GROQ_API_KEY = "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"
+load_dotenv() 
+
+GROQ_API_KEY = os.getenv("GROQ_API_KEY") 
 client = Groq(api_key=GROQ_API_KEY)
 
 # --- PAGE UI SETUP --- 
